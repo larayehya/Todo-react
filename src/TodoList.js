@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Todo from ".Todo";
+import Todo from "./Todo";
 
-const TodoList = () => {
+function ToDoList() {
   const [todo, setTodo] = useState("");
-  const [todos, setTodos] = useState(""); //array of todos
+  const [todos, setTodos] = useState([]); //array of todos
 
   const addTodos = (todoText) => {
     const newTodos = [...todos, todoText]; //hatyna bl newTodos kl l todos w zedna 3lyun l todoText
@@ -15,12 +15,11 @@ const TodoList = () => {
     // You can handle the form submission logic here, like adding the todo to the list.
     if (!todo) return;
     //eza ltodo fade tla3le mn l function
-    setTodos(todo);
+    addTodos(todo);
     setTodo("");
   };
 
   const removeTodo = () => {};
-
   const completeTodo = () => {};
 
   return (
@@ -51,6 +50,6 @@ const TodoList = () => {
       })}
     </>
   );
-};
+}
 
-export default TodoList;
+export default ToDoList;
